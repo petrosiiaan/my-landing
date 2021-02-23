@@ -7,7 +7,9 @@
 	position: relative;
 	height: auto;
 	width: 100%;
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: auto 2vh auto 2vh auto 2vh auto;
 	grid-template-columns: auto auto auto auto; /*i write auto four time because we want four rows*/
 	grid-gap: 2vh;
 	grid-auto-flow: dense;
@@ -20,31 +22,43 @@
     cursor: pointer;
 }
 .mainzz .gallery .img:first-child{
-	grid-column-start: span 2;
-	grid-row-start: span 2;
+	-ms-grid-column: span 2;
+	    grid-column-start: span 2;
+	-ms-grid-row: span 2;
+	    grid-row-start: span 2;
 }
 .mainzz .gallery .img:nth-child(2n+3){
-	grid-row-start: span 2;
+	-ms-grid-row: span 2;
+	    grid-row-start: span 2;
 }
 .mainzz .gallery .img:nth-child(4n+5){
-	grid-column-start: span 2;
-	grid-row-start: span 2;
+	-ms-grid-column: span 2;
+	    grid-column-start: span 2;
+	-ms-grid-row: span 2;
+	    grid-row-start: span 2;
 }
 .mainzz .gallery .img:nth-child(6n+7){
-	grid-row-start: span 1;
+	-ms-grid-row: span 1;
+	    grid-row-start: span 1;
 }
 .mainzz .gallery .img:nth-child(8n+9){
-	grid-column-start: span 1;
-	grid-row-start: span 1;
+	-ms-grid-column: span 1;
+	    grid-column-start: span 1;
+	-ms-grid-row: span 1;
+	    grid-row-start: span 1;
 }
 .mainzz .gallery .img img{
 	height: 100%;
 	width: 100%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	-webkit-transition: 0.3s ease-in-out;
+	-o-transition: 0.3s ease-in-out;
 	transition: 0.3s ease-in-out;
 }
 .mainzz .gallery .img:hover img{
-	filter: brightness(1) grayscale(0);
+	-webkit-filter: brightness(1) grayscale(0);
+	        filter: brightness(1) grayscale(0);
 }
 
 @media only screen and (max-width: 768px){
@@ -56,7 +70,9 @@
 		font-size: 1.2em;
 	}
 	.mainzz .gallery{
+		display: -ms-grid;
 		display: grid;
+		-ms-grid-columns: auto 2vh auto 2vh auto;
 		grid-template-columns: auto auto auto;
 	}
 }
@@ -79,6 +95,7 @@
 	}
 	.mainzz .gallery .img img{
 		display: block;
-		filter: brightness(1) grayscale(0);
+		-webkit-filter: brightness(1) grayscale(0);
+		        filter: brightness(1) grayscale(0);
 	}
 }
