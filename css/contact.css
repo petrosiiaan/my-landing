@@ -1,0 +1,12 @@
+iframe {
+    margin-top: 50px;
+}
+
+
+.map {
+    margin: 0 auto;
+    max-width: 650px;
+}
+.map > iframe {
+    width: 100%;
+}

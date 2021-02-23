@@ -1,0 +1,84 @@
+.mainzz{
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+.mainzz .gallery{
+	position: relative;
+	height: auto;
+	width: 100%;
+	display: grid;
+	grid-template-columns: auto auto auto auto; /*i write auto four time because we want four rows*/
+	grid-gap: 2vh;
+	grid-auto-flow: dense;
+}
+.mainzz .gallery .img{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+    cursor: pointer;
+}
+.mainzz .gallery .img:first-child{
+	grid-column-start: span 2;
+	grid-row-start: span 2;
+}
+.mainzz .gallery .img:nth-child(2n+3){
+	grid-row-start: span 2;
+}
+.mainzz .gallery .img:nth-child(4n+5){
+	grid-column-start: span 2;
+	grid-row-start: span 2;
+}
+.mainzz .gallery .img:nth-child(6n+7){
+	grid-row-start: span 1;
+}
+.mainzz .gallery .img:nth-child(8n+9){
+	grid-column-start: span 1;
+	grid-row-start: span 1;
+}
+.mainzz .gallery .img img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	transition: 0.3s ease-in-out;
+}
+.mainzz .gallery .img:hover img{
+	filter: brightness(1) grayscale(0);
+}
+
+@media only screen and (max-width: 768px){
+	.mainzz h1{
+		font-size: 1.8em;
+		width: 400px;
+	}
+	.mainzz p{
+		font-size: 1.2em;
+	}
+	.mainzz .gallery{
+		display: grid;
+		grid-template-columns: auto auto auto;
+	}
+}
+@media only screen and (max-width: 430px){
+	.mainzz h1{
+		font-size: 1.2em;
+		width: 300px;
+	}
+	.mainzz p{
+		font-size: 0.89em;
+	}
+	.mainzz .gallery{
+		display: block;
+	}
+	.mainzz .gallery .img{
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin:2% 0;
+	}
+	.mainzz .gallery .img img{
+		display: block;
+		filter: brightness(1) grayscale(0);
+	}
+}
